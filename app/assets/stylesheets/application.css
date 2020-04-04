@@ -1,0 +1,10 @@
+body {
+background-image: url(/assets/groc.jpeg);
+background-position: center;
+height: 100px;
+}
+
+#words {
+text-align: center;
+color: #F0FFFF;
+}
