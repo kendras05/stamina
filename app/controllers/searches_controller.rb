@@ -1,7 +1,8 @@
 class SearchesController < ApplicationController
   
   def index
-    @results = Product.search
+   # @results = Product.search
+   binding.irb
   end
 
   def print
