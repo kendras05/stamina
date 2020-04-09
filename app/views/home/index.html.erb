@@ -4,9 +4,13 @@
 </div>
 
 <div id="searchbar">
-<%= form_with(url: searches_path, method: :get)  do |f| %>
+<%= form_with(url: searches_path, local: true, method: :get)  do |f| %>
    <%= f.search_field(:query, class: "search-box") %>
    <%=  f.submit("Find Groceries", name: nil) %>
  <% end %>
 
 </div>
+
+
+ 
+
