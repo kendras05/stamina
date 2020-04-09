@@ -1,55 +1,49 @@
+
+
 require "watir"
 
 class GroceryBoy
 
-  def initilaize(query)  
-  @query = query  
+  def initialize(query)
+
+    @query = query
 
   end
 
   def search
-  
 
-    browser = Watir::Browser.new :chrome, headless: false
+    browser = Watir::Browser.new :chrome, headless: true
 
     browser.goto 'albertsons.com'
 
-    #browser.button(id:"openFulfillmentModalButton").click
+    browser.text_field(id: "skip-main-content").value = @query
 
-    #zip = browser.text_field(aria_labelledby: "zipcode")
-    #zip.value = "89115"
+    browser.button(aria_label: "search").click
+    sleep 1
+    search_grid = browser.element(tag_name: "search-grid")
 
-    #this does not work yet
-    #s = browser.span(class: /__search-wrapper__icon__/)
+    product_results = []
 
-    #s.last.click
-
-    #sleep 1
-
-    #browser.button(visible_text: "Select").first.click
-
-
-    sleep 3
-
-
-    browser.text_field(id:"skip-main-content").value = @query
-
-    b = browser.button(aria_label:"search")
-
-    b.exists?
-
-    b.click
-
-    sleep 10
-
-    list = browser.elements(tag_name: "product-item").each do |product|
+    search_grid.elements(tag_name: "product-item").each do |product|
 
 
 
+      product_name = product.h3.text
+      product_price = product.element(class: "product-price-con").text
+      product = {name: product_name, price: product_price}
+      product_results.push(product)
+      
+
+    end
+    
+    browser.close
+
+    # return the final results as an array of hashes
+
+    product_results
   end
 
-    puts list
-
-    browser.close
-    end
 end
+
+
+

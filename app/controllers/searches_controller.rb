@@ -1,8 +1,8 @@
 class SearchesController < ApplicationController
   
   def index
-   # @results = Product.search
-   binding.irb
+    @results = GroceryBoy.new(params[:query]).search
+    binding.irb
   end
 
   def print
