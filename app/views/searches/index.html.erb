@@ -1,11 +1,14 @@
 <h1>Searches#index</h1>
 <p>Find me in app/views/searches/index.html.erb</p>
 
+
 <div id="result_list">
+<table>
   <% @results.each do |result| %>
-    <h3><%= result[:name] %></h3>
-  <% end %>
+  <tr>
+      <td><%= result[:name][:price] %></td>
+  </tr>
+  <%end%>
+</table>
 </div>
-
-
 
