@@ -13,6 +13,8 @@ class GroceryBoy
   def search
 
     browser = Watir::Browser.new :chrome, headless: true
+    
+    #albertsons
 
     browser.goto 'albertsons.com'
 
@@ -35,15 +37,47 @@ class GroceryBoy
       
 
     end
+   
+    # return the final results as an array of hashes 
+    #albertsons                                      
+    product_results[0..10]                           
+
+    #walmart
+
+    browser.goto 'walmart.com' 
     
+    browser.text_field(id: "global-search-input").value = @query
+    
+    browser.button(id: "global-search-submit").click
+    
+
+    browser.button(id: "global-search-submit").click
+
+    browser.wait_until {|b| b.element(id: "searchProductResult").exists? }
+
+    items = []
+
+    browser.elements(class: "search-result-gridview-item-wrapper").each do |product|
+
+    sleep 30
+
+    title = product.element(class: "search-result-product-title").text
+  
+    amount = product.span(class: /price-main/).text
+   
+    
+
+    products = {store: "Walmart", name: title, price: amount}
+ 
+
+    items.push(products)
+
+    end
+
+    items[0..10]
+
+
     browser.close
 
-    # return the final results as an array of hashes
-
-    product_results
-  end
-
 end
-
-
-
+end
