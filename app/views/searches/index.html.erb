@@ -6,8 +6,7 @@
 <table>
   <% @results.each do |result| %>
   <tr>
-      <td><%= result[:name][:price] %></td>
-  </tr>
+    <td><%= result[:name] %> - <%= result[:price] %></td>
   <%end%>
 </table>
 </div>
