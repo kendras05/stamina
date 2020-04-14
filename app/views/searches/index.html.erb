@@ -8,6 +8,13 @@
   <tr>
     <td><%= result[:store] %> - <%= result[:name] %> - <%= result[:price] %></td>
   <%end%>
+
+  <% @walresults.each do |walresult| %>
+  <tr>
+    <td><%= walresult[:store] %> - <%= walresult[:name] %> -
+    </td>
+  <%end%>
+
 </table>
 </div>
 

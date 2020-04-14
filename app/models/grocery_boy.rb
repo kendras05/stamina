@@ -40,7 +40,7 @@ class GroceryBoy
    
     # return the final results as an array of hashes 
     #albertsons                                      
-
+=begin
     #walmart
 
     browser.goto 'walmart.com' 
@@ -71,11 +71,11 @@ class GroceryBoy
 
     end
 
-
+=end
 
     browser.close
 
     product_results[0..10]                           
-    items[0..10]
+#    items[0..10]
 end
 end
