@@ -40,7 +40,6 @@ class GroceryBoy
    
     # return the final results as an array of hashes 
     #albertsons                                      
-    product_results[0..10]                           
 
     #walmart
 
@@ -50,9 +49,6 @@ class GroceryBoy
     
     browser.button(id: "global-search-submit").click
     
-
-    browser.button(id: "global-search-submit").click
-
     browser.wait_until {|b| b.element(id: "searchProductResult").exists? }
 
     items = []
@@ -63,21 +59,23 @@ class GroceryBoy
 
     title = product.element(class: "search-result-product-title").text
   
-    amount = product.span(class: /price-main/).text
+#    amount = product.span(class: /price-main/).text
    
-    
 
-    products = {store: "Walmart", name: title, price: amount}
+    products = {store: "Walmart", name: title, 
+                #price: amount
+    }
  
 
     items.push(products)
 
     end
 
-    items[0..10]
 
 
     browser.close
 
+    product_results[0..10]                           
+    items[0..10]
 end
 end
