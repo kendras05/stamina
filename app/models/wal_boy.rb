@@ -27,11 +27,11 @@ class WalBoy
 
     title = product.element(class: "search-result-product-title").text
 
-#    amount = product.span(class: /price-main/).text
+    amount = product.span(class: /price-main/).text
 
 
     products = {store: "Walmart", name: title,
-                #price: amount
+                price: amount
     }
 
 
