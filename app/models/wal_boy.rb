@@ -27,6 +27,8 @@ class WalBoy
 
     title = product.element(class: "search-result-product-title").text
 
+    next unless product.span(class: /price-main/).exists?
+    
     amount = product.span(class: /price-main/).text
 
 
