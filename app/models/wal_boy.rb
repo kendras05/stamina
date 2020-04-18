@@ -9,8 +9,7 @@ class WalBoy
   end
 
   def search
-        browser = Watir::Browser.new :chrome, headless: true
-
+browser = Watir::Browser.new :chrome, args: %w[--headless --no-sandbox --disable-dev-shm-usage --disable-gpu --remote-debugging-port=9222]
 
     browser.goto 'walmart.com'
 
@@ -27,8 +26,6 @@ class WalBoy
 
     title = product.element(class: "search-result-product-title").text
 
-    next unless product.span(class: /price-main/).exists?
-    
     amount = product.span(class: /price-main/).text
 
 

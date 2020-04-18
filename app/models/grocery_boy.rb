@@ -12,8 +12,7 @@ class GroceryBoy
 
   def search
 
-    browser = Watir::Browser.new :chrome, headless: true
-    
+   browser = Watir::Browser.new :chrome, args: %w[--headless --no-sandbox --disable-dev-shm-usage --disable-gpu --remote-debugging-port=9222] 
     #albertsons
 
     browser.goto 'albertsons.com'
