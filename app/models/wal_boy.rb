@@ -9,7 +9,8 @@ class WalBoy
   end
 
   def search
-browser = Watir::Browser.new :chrome, args: %w[--headless --no-sandbox --disable-dev-shm-usage --disable-gpu --remote-debugging-port=9222]
+   browser = Watir::Browser.new :chrome, args: %w[--headless --no-sandbox --disable-dev-shm-usage --disable-gpu --remote-debugging-port=9222] 
+
 
     browser.goto 'walmart.com'
 
