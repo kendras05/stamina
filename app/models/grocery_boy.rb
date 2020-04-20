@@ -33,9 +33,9 @@ class GroceryBoy
     search_grid.elements(tag_name: "product-item").each do |product|
 
       product_name = product.h3.text
-      product_price = product.span(class: /product-price/).text
+      product_price = product.element(class: "product-price-con").text
       product_pic = product.image(class: /ab-lazy/).src
-      product = {store:"Albertsons", pic: product_pic ,  name: product_name, price: product_price}
+      product = {store:"Albertsons", pic: product_pic, name: product_name, price: product_price}
       product_results.push(product)
 
     end
