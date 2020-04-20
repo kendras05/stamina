@@ -1,7 +1,3 @@
-
-
-require "watir"
-
 class GroceryBoy
 
   def initialize(query)
