@@ -32,7 +32,8 @@ class GroceryBoy
       
       product_name = product.h3.text
       product_price = product.element(class: "product-price-con").text
-      product = {store:"Albertsons", name: product_name, price: product_price}
+      product_pic = product.image(class: /ab-lazy/).src
+      product = {store:"Albertsons", pic: product_pic, name: product_name, price: product_price}
       product_results.push(product)
       
 

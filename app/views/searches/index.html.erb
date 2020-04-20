@@ -6,7 +6,7 @@
 <table>
   <% @results.each do |result| %>
   <tr>
-    <td><%= result[:store] %> - <%= result[:name] %> - <%= result[:price] %></td>
+    <td><%= result[:store] %> - <%= image_tag result[:pic] %> - <%= result[:name] %> - <%= result[:price] %></td>
   <%end%>
 
   <% @walresults.each do |walresult| %>
