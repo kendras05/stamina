@@ -26,17 +26,15 @@ class GroceryBoy
     sleep 1
     search_grid = browser.element(tag_name: "search-grid")
  
-    sleep 2
+    sleep 3
 
     product_results = []
 
     search_grid.elements(tag_name: "product-item").each do |product|
 
       product_name = product.h3.text
-      product_price = product.element(class: "product-price-con").text
+      product_price = product.span(class: /product-price/).text
       product_pic = product.image(class: /ab-lazy/).src
-      #images = product.image(class: /ab-lazy/).src
-      #fin_img = images.gsub(/.*\//, '')
       product = {store:"Albertsons", pic: product_pic ,  name: product_name, price: product_price}
       product_results.push(product)
 
