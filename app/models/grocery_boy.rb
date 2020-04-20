@@ -1,3 +1,4 @@
+
 class GroceryBoy
 
   def initialize(query)
@@ -18,11 +19,14 @@ class GroceryBoy
 
     browser.goto 'albertsons.com'
 
+
     browser.text_field(id: "skip-main-content").value = @query
 
     browser.button(aria_label: "search").click
     sleep 1
     search_grid = browser.element(tag_name: "search-grid")
+ 
+    sleep 2
 
     product_results = []
 
@@ -30,13 +34,17 @@ class GroceryBoy
 
       product_name = product.h3.text
       product_price = product.element(class: "product-price-con").text
-      product = {store:"Albertsons", name: product_name, price: product_price}
+      product_pic = product.image(class: /ab-lazy/).src
+      #images = product.image(class: /ab-lazy/).src
+      #fin_img = images.gsub(/.*\//, '')
+      product = {store:"Albertsons", pic: product_pic ,  name: product_name, price: product_price}
       product_results.push(product)
 
     end
+    sleep 2
 
     browser.close
-
+    
     product_results[0..10]
   end
 end
