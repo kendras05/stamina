@@ -55,4 +55,5 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem 'watir'
 
-
+gem 'jquery-rails'
+gem 'bootstrap-sass'
