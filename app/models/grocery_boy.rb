@@ -43,6 +43,6 @@ class GroceryBoy
 
     browser.close
     
-    product_results[0..10]
+    product_results[0..4]
   end
 end
