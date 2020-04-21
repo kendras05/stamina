@@ -4,10 +4,11 @@
 
 
 <div id="result_list">
+
 <table>
   <% @results.each do |result| %>
   <tr>
-    <td><%= result[:store] %> - <%= image_tag result[:pic] %> - <%= result[:name] %> - <%= result[:price] %></td>
+    <td><%= image_tag result[:logoview] %> - <%= image_tag result[:pic] %> - <%= result[:name] %> - <%= result[:price] %></td>
   <%end%>
 
 
