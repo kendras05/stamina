@@ -8,10 +8,20 @@
 <table>
   <% @results.each do |result| %>
   <tr>
-    <td><%= image_tag result[:logoview] %> - <%= image_tag result[:pic] %> - <%= result[:name] %> - <%= result[:price] %></td>
+    <td><%= image_tag("albert.jpg", alt: "Albertsons", height: "37", width: "240")  %> - <%= image_tag result[:pic] %> -<h2><%= result[:name] %></h2> -<h2><%= result[:price] %></h2></td>
   <%end%>
 
 
 </table>
+
+<table>
+  <% @vonresults.each do |vresult| %>
+  <tr>
+    <td><%=  image_tag("vons.jpg", alt: "Vons", height:"103", width:"272")  %> - <%= image_tag vresult[:pic] %> - <h2><%= vresult[:name] %></h2> - <h2><%= vresult[:price] %></h2></td>
+  <%end%>
+
+
+</table>
+
 </div>
 

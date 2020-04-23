@@ -1,10 +1,11 @@
+require 'watir'
 
-class GroceryBoy
+class VonsGirl
 
   def initialize(query)
     @query = query
   end
-
+=begin
   def browser_args
     if Rails.env.production?
       %w[--headless --no-sandbox --disable-dev-shm-usage --disable-gpu --remote-debugging-port=9222]
@@ -12,12 +13,12 @@ class GroceryBoy
       []
     end
   end
-
+=end
   def search
-    #albertsons
-    browser = Watir::Browser.new :chrome, args: browser_args
+    #vons
+    browser = Watir::Browser.new :chrome # args: browser_args
 
-    browser.goto 'albertsons.com'
+    browser.goto 'vons.com'
 
     sleep 1
     browser.text_field(id: "skip-main-content").value = @query
@@ -28,24 +29,25 @@ class GroceryBoy
  
     sleep 3
 
-    product_results = []
+    von_results = []
 
-#    logo = browser.image(class: /logo-albertsons/).src
+#    logo = browser.image(class: /logo-vons/).src
     search_grid.elements(tag_name: "product-item").each do |product|
       
-      product_name = product.h3.text
-      product_price = product.element(class: "product-price-con").text
-      product_pic = product.image(class: /ab-lazy/).src
-      product = {store:"Albertsons",
+      von_name = product.h3.text
+      von_price = product.element(class: "product-price-con").text
+      von_pic = product.image(class: /ab-lazy/).src
+      von_product = {store:"Vons",
 #                 logoview: logo, 
-                 pic: product_pic, name: product_name, price: product_price}
-      product_results.push(product)
+                 pic: von_pic, name: von_name, price: von_price}
+      von_results.push(von_product)
 
     end
     sleep 2
 
-#    browser.close
+    browser.close
     
-    product_results[0..4]
+    von_results[0..4]
   end
 end
+
