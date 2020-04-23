@@ -56,3 +56,14 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'watir'
 gem 'jquery-rails'
 gem 'bootstrap-sass'
+
+group :development, :test do  
+  gem 'rspec'  
+  gem 'rspec-rails', '~> 4.0.0.beta4'
+  gem 'shoulda-matchers' 
+  gem 'factory_bot_rails'  
+  gem 'database_cleaner'  
+  gem 'simplecov' 
+  gem 'faker'
+  gem 'rails-controller-testing'
+end
