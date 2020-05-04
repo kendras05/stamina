@@ -13,12 +13,10 @@
 
 </table>
 
-<% if false %>
 <table>
   <% @vonresults.each do |vresult| %>
   <tr>
     <td><%=  image_tag("vons.jpg", alt: "Vons", height:"103", width:"272")  %> - <%= image_tag vresult[:pic] %> - <h2><%= vresult[:name] %></h2> - <h2><%= vresult[:price] %></h2></td>
-  <%end%>
 
 
 </table>

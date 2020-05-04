@@ -5,3 +5,7 @@
 //= require activestorage
 //= require turbolinks
 //= require_tree .
+
+window.onload = () =>{
+	console.log("page has loaded")
+}
