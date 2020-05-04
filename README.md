@@ -1,13 +1,13 @@
 # README
+S.T.A.M.I.N.A.
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Stands for save time and money in an app. It queries for groceries from stores in your area and it lets you compare prices from multiple stores. You can find this app in production at savestam.com. 
 
 Things you may want to cover:
 
-* Ruby version
+* The app is built entirely on Ruby on Rails, ruby-2.6.3
 
-* System dependencies
+* Watir is the main gem that is used to perform webscraping. 
 
 * Configuration
 
@@ -17,8 +17,3 @@ Things you may want to cover:
 
 * How to run the test suite
 
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
